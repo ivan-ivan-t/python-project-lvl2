@@ -2,7 +2,7 @@ from gendiff import gendiff
 from json import loads
 import json
 
-
+       
 def test_diff_json():
     file1 = 'tests/fixtures/first.json'
     file2 = 'tests/fixtures/second.json'
