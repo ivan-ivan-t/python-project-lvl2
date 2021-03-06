@@ -3,7 +3,7 @@ install:
 	poetry install
 
 test:
-	poetry run pytest-3 tests -vv
+	poetry run pytest tests -vv
 
 lint:
 	poetry run flake8 gendiff
