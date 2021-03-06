@@ -15,11 +15,8 @@ python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.8.4"
-<<<<<<< HEAD
 pytest = "^4.6.9"
-=======
 pytest = "^6.2.1"
->>>>>>> 8931fdc9d47af1f32557e2de343ddd929cb0af39
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
