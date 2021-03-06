@@ -14,7 +14,7 @@ def generate_diff(first, second):
         elif k in second and v == second[k]:
             pre_result.append('   {0}: {1}'.format(k, v))
         elif k in second and v != second[k]:
-            pre_result.append(' - {0}: {1},\n + {2}: {3}'.format(k, v, k, second[k]))
+            pre_result.append(' - {0}: {1}\n + {2}: {3}'.format(k, v, k, second[k]))
     for k, v in second.items():
         if k not in first:
             pre_result.append(' + {0}: {1}'.format(k, v))

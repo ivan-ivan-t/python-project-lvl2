@@ -1,13 +1,24 @@
+
+install:
+	poetry install
+
+test:
+	poetry run pytest
+
 lint:
 	poetry run flake8 gendiff
 
 gendiff:
 	poetry run gendiff
 
-install:
-	poetry install
+selfcheck:
+	poetry check
 
-build:
+check: selfcheck test lint
+
+build: check
 	poetry build
+
+.PHONY: install test lint selfcheck check build
 
 
