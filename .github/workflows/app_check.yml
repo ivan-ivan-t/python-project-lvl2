@@ -27,7 +27,7 @@ jobs:
           make check
       
   coverage:
-    needs: [ check ]
+    needs: [ build ]
     name: coverage
     runs-on: ubuntu-latest
     steps:
