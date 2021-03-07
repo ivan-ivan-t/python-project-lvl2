@@ -20,7 +20,7 @@ build: check
 	poetry build
 
 test-coverage:
-	python3 -m pytest --cov=gendiff --cov-report xml tests/
-
+	poetry run pytest --cov=gendiff tests/ --cov-report xml
+	
 
 .PHONY: install test lint selfcheck check build
