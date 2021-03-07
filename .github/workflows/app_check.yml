@@ -26,8 +26,19 @@ jobs:
         run: |
           make check
       
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v2.7.5
+    coverage:
+      needs: [ check ]
+      name: coverage
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.5
+      - run: |
+          pip install poetry
+          make install
+      - uses: paambaati/codeclimate-action@v2.7.5
         env:
           CC_TEST_REPORTER_ID: 04054ff398ebc365633e03193492fbec0ccc71d11c5b4664138c060ac7a450bb  
         with:
