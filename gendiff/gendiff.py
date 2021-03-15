@@ -1,12 +1,12 @@
-import json
+from gendiff.parser import parse
 
 
 def generate_diff(first, second):
 
     result = ''
     pre_result = []
-    first = json.load(open(first))
-    second = json.load(open(second))
+    first = parse(first)
+    second = parse(second)
 
     for k, v in first.items():
         if k not in second:

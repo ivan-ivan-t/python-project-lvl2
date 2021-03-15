@@ -6,7 +6,11 @@
 [![Actions Status](https://github.com/ivan-ivan-t/python-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/ivan-ivan-t/python-project-lvl2/actions)
 
 
-### Run gendiff:
+## Run gendiff JSON:
 
 [![asciicast](https://asciinema.org/a/F631462uwJsKjLJXREiNGiQ1J.svg)](https://asciinema.org/a/F631462uwJsKjLJXREiNGiQ1J)
 
+
+## Run gendiff YAML:
+
+[![asciicast](https://asciinema.org/a/399230.svg)](https://asciinema.org/a/399230)
