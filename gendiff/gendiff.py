@@ -1,25 +1,23 @@
+from gendiff.makediff import make_diff
 from gendiff.parser import parse
+from gendiff.formats.stylish import stylish
 
 
-def generate_diff(first, second):
+def generate_diff(after, before, name_formater='stylish'):
 
-    result = ''
-    pre_result = []
-    first = parse(first)
-    second = parse(second)
+    after = parse(after)
+    before = parse(before)
 
-    for k, v in first.items():
-        if k not in second:
-            pre_result.append(' - {0}: {1}'.format(k, v))
-        elif k in second and v == second[k]:
-            pre_result.append('   {0}: {1}'.format(k, v))
-        elif k in second and v != second[k]:
-            pre_result.append(' - {0}: {1}\n + {2}: {3}'.format(k, v, k, second[k]))
-    for k, v in second.items():
-        if k not in first:
-            pre_result.append(' + {0}: {1}'.format(k, v))
+    diff = make_diff(after, before)
+    make_diff_format = select_formater(name_formater)
 
-    for i in sorted(pre_result, key=lambda x: x[3]):
-        result += '{}\n'.format(i)
+    return make_diff_format(diff) + '\n' + '}'
 
-    return '{\n' + result + '}'
+
+def select_formater(name):
+
+    formaters = {
+        'stylish': stylish,
+    }
+
+    return formaters[name]

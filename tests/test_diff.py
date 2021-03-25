@@ -22,3 +22,20 @@ def test_diff_yml():
     assert result == expect
 
 
+def test_stylish_json():
+    file1 = ''
+    file2 = ''
+    with open('', 'r') as answer:
+	expected = answer.read()
+    result = gendiff.generate_diff(file1, file2)
+    assert result == expected
+
+
+
+def test_stylish_yaml():
+    file1 = ''
+    file2 = ''
+    with open('', 'r') as answer:
+        expected = answer.read()
+    result = gendiff.generate_diff(file1, file2)
+    assert result == expected
