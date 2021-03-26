@@ -23,19 +23,19 @@ def test_diff_yml():
 
 
 def test_stylish_json():
-    file1 = ''
-    file2 = ''
-    with open('', 'r') as answer:
-	expected = answer.read()
+    file1 = 'tests/fixtures/first2.json'
+    file2 = 'tests/fixtures/second2.json'
+    with open('tests/fixtures/answer_diff_2.txt', 'r') as answer:
+        expected = answer.read()
     result = gendiff.generate_diff(file1, file2)
     assert result == expected
 
 
 
 def test_stylish_yaml():
-    file1 = ''
-    file2 = ''
-    with open('', 'r') as answer:
+    file1 = 'tests/fixtures/first2.yaml'
+    file2 = 'tests/fixtures/second2.yaml'
+    with open('tests/fixtures/answer_diff_2.txt', 'r') as answer:
         expected = answer.read()
     result = gendiff.generate_diff(file1, file2)
     assert result == expected
