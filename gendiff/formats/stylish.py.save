@@ -1,14 +1,5 @@
 from gendiff.formats.make_sorted import sorted_diff
-
-
-def set_value(value):
-    if value is True or value is False:
-        return str(value).lower()
-    if value is None:
-        return 'null'
-    else:
-        return value
-
+from gendiff.
 
 def stylish(diff):
 
@@ -21,6 +12,8 @@ def stylish(diff):
             if type(value) is dict:
                 result += '\n' + spaces + key + ': ' + inner(value, space + 4) + '\n' + spaces + '  }'
             else:
-                result += '\n' + spaces + key + ': ' + str(set_value(value))
+                result += '\n' + spaces + key + ': ' + str(value)
+
         return result
+
     return inner(diff) + '\n' + '}'
