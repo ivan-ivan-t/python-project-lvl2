@@ -2,6 +2,7 @@ from gendiff.makediff import make_diff
 from gendiff.parser import parse
 from gendiff.formats.stylish import stylish
 from gendiff.formats.plain import plain
+from gendiff.formats.json import render_json
 
 
 def generate_diff(after, before, name_formater='stylish'):
@@ -19,7 +20,8 @@ def select_formater(name):
 
     formaters = {
         'stylish': stylish,
-        'plain': plain
+        'plain': plain,
+        'json': render_json
     }
 
     return formaters[name]

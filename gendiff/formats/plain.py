@@ -12,7 +12,7 @@ def set_value(value):
         return '[complex value]'
     if type(value) is bool:
         return str(value).lower()
-    if value == None:
+    if value is None:
         return 'null'
     else:
         return '{}{}{}'.format('\'', value, '\'')
@@ -30,20 +30,20 @@ def plain(diff):
         diff = sorted_diff(diff)
         result = ''
         for k, values in diff.items():
-                    if k[:1] == '-' and '+' + k[1:] not in diff:
-                        result += REM.format(make_path(path, k[2:])) + '\n'
-                    if k[:1] == '+':
-                        if '-' + k[1:] in diff:
-                            result += UPD.format(
-                                make_path(path, k[2:]),
-                                set_value(diff['-' + k[1:]]),
-                                set_value(diff['+' + k[1:]])
-                            ) + '\n'
-                        if '-' + k[1:] not in diff:
-                            result += ADD.format(
-                                make_path(path, k[2:]), set_value(diff[k])
-                            ) + '\n'
-                    if type(values) is dict:
-                        result += inner(values, make_path(path, k[2:]))
+            if k[:1] == '-' and '+' + k[1:] not in diff:
+                result += REM.format(make_path(path, k[2:])) + '\n'
+            if k[:1] == '+':
+                if '-' + k[1:] in diff:
+                    result += UPD.format(
+                        make_path(path, k[2:]),
+                        set_value(diff['-' + k[1:]]),
+                        set_value(diff['+' + k[1:]])
+                    ) + '\n'
+                if '-' + k[1:] not in diff:
+                    result += ADD.format(
+                        make_path(path, k[2:]), set_value(diff[k])
+                    ) + '\n'
+            if type(values) is dict:
+                result += inner(values, make_path(path, k[2:]))
         return result
     return inner(diff)[:-1]
