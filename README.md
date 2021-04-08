@@ -16,3 +16,7 @@
 
 #### Run gendiff JSON and YAML whith plain:
 [![asciicast](https://asciinema.org/a/405183.svg)](https://asciinema.org/a/405183)
+
+
+#### Run JSON view:
+[![asciicast](https://asciinema.org/a/406021.svg)](https://asciinema.org/a/406021)
