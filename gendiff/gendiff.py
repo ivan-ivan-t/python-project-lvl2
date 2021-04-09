@@ -9,7 +9,6 @@ def generate_diff(after, before, name_formater='stylish'):
 
     after = parse(after)
     before = parse(before)
-
     diff = make_diff(after, before)
     make_diff_format = select_formater(name_formater)
 
