@@ -1,4 +1,10 @@
-def make_diff(first, second):
+def make_diff(first, second=None):
+
+    if type(first) != dict:
+        return first
+
+    if second is None:
+        second = first
 
     result = {}
     same_key = first.keys() & second.keys()
