@@ -14,6 +14,8 @@ def set_value(value):
         return str(value).lower()
     if value is None:
         return 'null'
+    if type(value) is int:
+        return value
     else:
         return '{}{}{}'.format('\'', value, '\'')
 
