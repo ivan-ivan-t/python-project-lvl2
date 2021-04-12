@@ -29,7 +29,6 @@ def test_stylish_json():
     assert result == expected
 
 
-
 def test_stylish_yaml():
     file1 = 'tests/fixtures/first2.yaml'
     file2 = 'tests/fixtures/second2.yaml'
@@ -62,5 +61,5 @@ def test_json():
     file2 = 'tests/fixtures/second2.json'
     with open('tests/fixtures/answer_json.json', 'r') as answer:
         expected = loads(answer.read())
-    result =loads(generate_diff(file1, file2, 'json'))
+    result = loads(generate_diff(file1, file2, 'json'))
     assert result == expected
