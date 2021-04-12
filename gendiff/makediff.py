@@ -15,7 +15,7 @@ def make_diff(first, second=None):
         if first[key] == second[key]:
             result['  ' + key] = first[key]
         if first[key] != second[key]:
-            if type(first[key]) and type(second[key]) is dict:
+            if type(first[key]) is dict and type(second[key]) is dict:
                 result['  ' + key] = make_diff(first[key], second[key])
             else:
                 result['- ' + key] = first[key]
